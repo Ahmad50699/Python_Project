@@ -1,5 +1,22 @@
 import random
 
+class RPS:
+    def __init__(self):
+        self.moves =["Rock","Paper","Scissor"]
+    def play(self):
+        user = input("Enter your move [Rock, Paper, Scissor]: ").capitalize()
+        computer = random.choice(self.moves)
+        print(f"USER: {user}, COMPUETR: {computer}")
+        
+        if user == computer:
+            print("TIE!!")
+        elif (user == "Rock" and computer == "Scissor") or (user == "Paper" and computer == "Rock") or (user == "Scissor" and computer == "Paper"):
+            print("USER WIN!!!!")
+        elif user in self.moves:
+            print("COMPUTER WIN!!!")
+        else:
+            print("Move correctly")
+
 class HeadTails:
     def toss(self):
         print("\n TOSS THE COIN")
